@@ -15,7 +15,7 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.7
-      - image: circleci/mysql:5.5
+      - image: circleci/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: app_test
@@ -43,5 +43,5 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
